@@ -13,26 +13,36 @@
 
 ### Useful dev commands
 To run formatter
+
 `poetry run black .`
 
 To run tests
+
 `poetry run pytest .`
 
 ### Available features
 #### list
 To list all buckets in the account run 
+
 `poetry run cli list`
+
 You can also specify the wanted size unit for files with the `--size-format` flag. Available values are `b|kb|mb|gb|tb`
+
 You can also provide a grouping options with the `--group-by` flag. Only the `region` value is supported
 
 #### get
 You can display information of a specific bucket with the get command by providing the name of the bucket
+
 `poetry run cli get BUCKET_NAME`
+
 You can also provide the `--size-format` flag like in the list command
 
 #### find
 You can search for specific buckets either by bucket name or by storage class
+
 `poetry run cli find --name=BUCKET_NAME`
+
 or
+
 `poetry run cli find --storage-class=STORAGE_CLASS`
 You can also provide the `--size-format` flag like in the list command
