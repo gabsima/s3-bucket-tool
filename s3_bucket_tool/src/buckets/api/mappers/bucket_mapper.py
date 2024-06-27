@@ -1,5 +1,5 @@
 from s3_bucket_tool.src.buckets.domain.bucket import Bucket
-from s3_bucket_tool.src.buckets.domain.format import SizeFormat
+from s3_bucket_tool.src.buckets.domain.enums import SizeFormat
 
 
 def map_to_displayable(bucket: Bucket, size_format: SizeFormat) -> dict:
@@ -8,6 +8,8 @@ def map_to_displayable(bucket: Bucket, size_format: SizeFormat) -> dict:
         "creation_date": bucket.creation_date.strftime("%c"),
         "nb_files": bucket.nb_files,
         f"total_size ({size_format})": bucket.convert_unit(size_format),
-        "last_modified": bucket.last_modified.strftime("%c") if bucket.last_modified else "Never",
+        "last_modified": (
+            bucket.last_modified.strftime("%c") if bucket.last_modified else "Never"
+        ),
         "cost": bucket.calculate_cost(),
     }

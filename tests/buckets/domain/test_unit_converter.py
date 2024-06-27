@@ -1,5 +1,5 @@
 import pytest
-from s3_bucket_tool.src.buckets.domain.format import SizeFormat
+from s3_bucket_tool.src.buckets.domain.enums import SizeFormat
 from s3_bucket_tool.src.buckets.domain.unit_converter import (
     convert_units_from_bytes,
 )

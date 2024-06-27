@@ -1,4 +1,4 @@
-from .format import SizeFormat
+from .enums import SizeFormat
 from decimal import Decimal
 
 
